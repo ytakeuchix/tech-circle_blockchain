@@ -20,12 +20,11 @@ type Baggage struct {
 
 
 func (t *ChaincodeEX4) Init(stub *shim.ChaincodeStub, function string, args []string) ([]byte, error) {
-    /*if len(args) != 1 {
+    if len(args) != 1 {
         return nil, errors.New("Incorrect number of arguments. Expecting 1")
     }
     
     stub.PutState("admin", []byte(args[0]))
-    */
     
     return nil, nil
 }
@@ -34,7 +33,6 @@ func (t *ChaincodeEX4) Invoke(stub *shim.ChaincodeStub, function string, args []
     var key string
     var err error
     
-    /*
     password, err := stub.GetState("admin")
     if err != nil {
         return nil, errors.New("Failed fetching admin identity")
@@ -43,7 +41,6 @@ func (t *ChaincodeEX4) Invoke(stub *shim.ChaincodeStub, function string, args []
     if string(password) != args[5] {
         return nil, errors.New("password is missing")
     }
-    */
     
     key = args[0]
     item := args[1]
